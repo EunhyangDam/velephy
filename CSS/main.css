@@ -1,0 +1,283 @@
+@font-face {
+  font-family: "RIDIBatang";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "RIDIBatang";
+  font-size: 16px;
+  background-image: url(../img/Velephy.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+header {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+header nav a {
+  position: relative;
+  display: block;
+  text-align: right;
+  position: relative;
+  margin: 40px 40px 40px 0px;
+  width: 30px;
+  height: 30px;
+  border: 2.7px solid var(--primary-color);
+  border-radius: 50%;
+}
+header nav a span.circle {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+header nav a.active span.circle {
+  opacity: 1;
+}
+header nav a:hover span.circle {
+  opacity: 1;
+}
+
+header nav a span.nav-text {
+  margin-right: 35px;
+  position: absolute;
+  top: 50%;
+  right: -295%;
+  z-index: -1;
+  transform: translate(0, -50%) scaleX(0%);
+  transform-origin: right;
+  white-space: nowrap;
+  width: auto;
+  color: var(--primary-color);
+  background-color: #fff;
+  border-radius: 50px 0 0 50px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 0.7rem 5rem 0.7rem 0.8rem;
+  opacity: 0;
+  transition: opacity 0.7s, transform 0.3s;
+}
+header nav a.active span.nav-text {
+  opacity: 1;
+  transform: translate(0, -50%) scaleX(100%);
+}
+
+header nav a:hover span.nav-text {
+  opacity: 1;
+  transform: translate(0, -50%) scaleX(100%);
+}
+
+.inner {
+  max-width: 900px;
+  padding: 45px 20px;
+  margin: 30px auto;
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+}
+section.chapter > * {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.chat {
+  display: flex;
+  align-items: flex-start;
+}
+.portrait {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+p.GM .portrait {
+  background: url(../img/css_sprites.png) -135px 0px;
+}
+p.velika .portrait {
+  background: url(../img/css_sprites.png) 0px 0px;
+}
+p.nephy .portrait {
+  background: url(../img/css_sprites.png) -45px 0px;
+}
+p.nephy.nephy-winter .portrait {
+  background: url(../img/css_sprites.png) -90px 0px;
+}
+.name {
+  font-weight: bold;
+  white-space: nowrap;
+  display: block;
+  color: var(--primary-color);
+}
+p.velika .name {
+  color: #888;
+}
+p.nephy .name {
+  color: #d8d8d3;
+}
+.line em {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+.line > span {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.line > span:last-child {
+  margin-bottom: 0;
+}
+div.chapter {
+  position: relative;
+  padding: 1.2rem 0px 1.7rem 1.2rem;
+  color: var(--primary-color);
+}
+div.chapter::before {
+  content: "";
+  display: block;
+  background-color: var(--primary-color);
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+div.chapter h2 {
+  font-size: 1.5rem;
+  position: relative;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+div.chapter ul li:first-child {
+  font-weight: bold;
+  border-bottom: 1px solid var(--primary-color);
+  /* margin-bottom: 2px; */
+}
+.dice {
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+.dice span {
+  display: block;
+  margin-bottom: 0.3em;
+}
+.dice span:last-child {
+  margin-bottom: 0;
+}
+.dice.neon span {
+  text-shadow: 0 0 10px var(--primary-color);
+}
+.rr-time {
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+.rr-time li {
+  margin-bottom: 0.3rem;
+}
+.rr-time .notice {
+  font-size: 0.7rem;
+  margin-bottom: -0.2rem;
+}
+
+.ending {
+  text-align: center;
+  color: var(--primary-color);
+  padding: 15px 0;
+  font-size: 0.95rem;
+}
+.ending .ending-name {
+  margin-bottom: 0.5em;
+}
+.ending .ending-name p:first-child {
+  font-size: 0.6rem;
+  margin-bottom: -0.2rem;
+}
+.ending .ending-name p:last-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.credit {
+  color: var(--primary-color);
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+section.credit {
+  margin-top: 2rem;
+}
+
+.credit .session_card {
+  height: 600px;
+}
+
+.credit h4 {
+  margin-bottom: 0.8rem;
+}
+.credit h4 .rule_name {
+  font-size: 0.8rem;
+  letter-spacing: 0.15rem;
+  margin-bottom: -0.3rem;
+}
+.credit h4 .scenario_name {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.credit .chara {
+  margin-bottom: 0.6rem;
+}
+.credit .chara li {
+  margin-bottom: 0.2rem;
+}
+.credit .chara p:first-child {
+  font-size: 0.65rem;
+  margin-bottom: -0.4rem;
+}
+.credit .chara p:last-child {
+  font-size: 1.1rem;
+}
+.credit .chara span {
+  font-weight: bold;
+}
+
+.credit .staff {
+  margin-bottom: 0.5rem;
+}
+.credit .staff li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: justify;
+  gap: 0 20px;
+  margin-bottom: 2px;
+}
+.credit .staff li p:first-child {
+  text-align: right;
+  font-weight: bold;
+}
+
+.credit h5 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.credit h5 i {
+  display: block;
+}
+
+.credit .time {
+  margin-bottom: 0.3rem;
+}
