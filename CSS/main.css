@@ -5,6 +5,13 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "NEXON Lv1 Gothic OTF";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -111,10 +118,12 @@ header nav a:hover span.nav-text {
   border-radius: 30px;
   box-shadow: 9px 9px 18px rgba(0, 0, 0, 0.2);
 }
+
 section.chapter > * {
   padding: 0.7rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
+
 .intro {
   text-align: center;
   color: var(--primary-color);
@@ -124,6 +133,63 @@ section.chapter > * {
   max-height: 600px;
   margin-bottom: 0.3rem;
 }
+section .music-container {
+  text-align: center;
+}
+section .music-container .music {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  min-width: 30%;
+  padding: 10px 14px 10px 10px;
+  overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  text-align: justify;
+  font-family: "NEXON Lv1 Gothic OTF";
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  transition: color 0.4s;
+}
+section .music-container .music:hover {
+  color: #fff;
+}
+
+section .music-container .music::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+
+section .music-container .music:hover::after {
+  transform: scaleX(1);
+}
+
+section .music-container .music i {
+  font-size: 25px;
+  background-color: rgba(255, 255, 255, 0.45);
+  padding: 0.5em;
+  margin-right: 10px;
+  border-radius: 15px;
+}
+section .music-container .music .music-explain {
+  margin: auto 0;
+}
+section .music-container .music .music-explain .music-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+}
+
 .chat {
   display: flex;
   align-items: flex-start;
