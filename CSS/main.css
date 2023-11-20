@@ -79,7 +79,7 @@ header nav a span.nav-text {
   margin-right: 35px;
   position: absolute;
   top: 50%;
-  right: -295%;
+  right: -300%;
   z-index: -1;
   transform: translate(0, -50%) scaleX(0%);
   transform-origin: right;
@@ -105,14 +105,24 @@ header nav a:hover span.nav-text {
 
 .inner {
   max-width: 900px;
-  padding: 45px 20px;
+  padding: 40px 40px;
   margin: 30px auto;
   backdrop-filter: blur(20px);
-  border-radius: 15px;
+  border-radius: 30px;
+  box-shadow: 9px 9px 18px rgba(0, 0, 0, 0.2);
 }
 section.chapter > * {
   padding: 0.7rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.intro {
+  text-align: center;
+  color: var(--primary-color);
+  padding-bottom: 1rem;
+}
+.session_card {
+  max-height: 600px;
+  margin-bottom: 0.3rem;
 }
 .chat {
   display: flex;
@@ -243,10 +253,6 @@ div.chapter ul li:first-child {
 }
 section.credit {
   margin-top: 2rem;
-}
-
-.credit .session_card {
-  height: 600px;
 }
 
 .credit h4 {
