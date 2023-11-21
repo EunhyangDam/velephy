@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 <!-- 반응형 추가하기 -->
-<!-- 핸드아웃 추가하기 -->
 
 <head>
   <meta charset="UTF-8" />
@@ -14,7 +13,9 @@
 </head>
 <style>
   :root {
-    --primary-color: #517498;
+    --primary-color: #1fd8f4;
+    --secondary-color: #3d727a;
+    --gradient: linear-gradient(135deg, #1fd8f4, #85e5f4);
   }
 
   .inner {
@@ -27,46 +28,18 @@
 <body>
   <header>
     <nav>
-      <a href="#zero" class="active">
-        <span class="nav-text">고래의 바다</span>
-        <span class="circle"></span>
-      </a>
-      <a href="#one">
-        <span class="nav-text">난파선</span>
-        <span class="circle"></span>
-      </a>
-      <a href="#two">
-        <span class="nav-text">물의 행성</span>
-        <span class="circle"></span>
-      </a>
-      <a href="#three">
-        <span class="nav-text">물의 산맥</span>
-        <span class="circle"></span>
-      </a>
-      <a href="#four">
-        <span class="nav-text">세이렌의 섬</span>
-        <span class="circle"></span>
-      </a>
-      <a href="#five">
-        <span class="nav-text">후일담</span>
-        <span class="circle"></span>
-      </a>
-      <a href="#epilouge">
-        <span class="nav-text">다시 돌아올 겨울이</span>
-        <span class="circle"></span>
-      </a>
     </nav>
   </header>
   <div class="inner">
-    <div class="intro">
+    <section class="intro">
       <img src="img/Velephy.jpg" alt="Session Card" class="session_card">
       <p class="time">
         2023. 11. 15 18:05
       </p>
-    </div>
-    <section id="zero" class="chapter">
+    </section>
+    <section id="zero" class="chapter" data-chap-name="고래의 바다">
       <div class="chapter">
-        <h2 class="name">#Chapter 0</h2>
+        <h2>#Chapter 0</h2>
         <ul>
           <li>고래의 바다</li>
           <li>이계심도 4</li>
@@ -345,9 +318,9 @@
         </span>
       </p>
     </section>
-    <section id="one" class="chapter">
+    <section id="one" class="chapter" data-chap-name="난파선">
       <div class="chapter">
-        <h2 class="name">#Chapter 1</h2>
+        <h2>#Chapter 1</h2>
         <ul>
           <li>난파선</li>
           <li>이계심도 5</li>
@@ -623,9 +596,9 @@
         </span>
       </p>
     </section>
-    <section id="two" class="chapter">
+    <section id="two" class="chapter" data-chap-name="물의 행성">
       <div class="chapter">
-        <h2 class="name">#Chapter 2</h2>
+        <h2>#Chapter 2</h2>
         <ul>
           <li>물의 행성</li>
           <li>이계심도 6</li>
@@ -897,7 +870,6 @@
           </span>
         </span>
       </p>
-
       <p class="GM chat">
         <span class="portrait"></span>
         <span class="content">
@@ -907,6 +879,17 @@
           </span>
         </span>
       </p>
+      <div class="handout">
+        <img src="img/foam_handout_1.png" alt="물거품 엘레지 핸드아웃 ■월 ■■일 / 이 곳에 표류 된 지도 어언 ■일…. 파도가 밀려오는 곳으로 향하고 있지만,  주기적으로 밀려오는 파도가, 우리를 밀어내는 탓에 육지에는 다다를 수 없다. 분명 이 ■■의 출구는 저 곳일텐데. 파도에 닿을 때 마다 무언가 나 자신을 잃어가는 듯한 기분…. 이대로는 오래 버틸 수 없어….
+        ■월 ■■일 / 얼마나 항해를 했는지 알 수 없다. 이 곳은 평화롭고, 밀려오는 파도 외에는 어떤 위험도 없어 보이지만, 그럼에도 불구하고 느리고 아름다운 방법으로 우리를 좀 먹어간다. 노랫소리가 들려온다. 끔찍하게 감미로운 노랫소리가, 계속해서…. 두렵다. 두렵다….
+        ■월 ■■일 / 함께 온 친구가 결국 ■■■이 되어 사라졌다.
+        ■월 ■■일 / 나는 변화했다. 하지만 이 곳의 일부가 되지 않을 것이다.
+        나 자신이 더 이상 내가 아니게 되더라도, 마지막으로 끝을 결정할 의지만큼은….
+        " class="handout-preview">
+        <button type="submit" class="handout-button" data-src="foam_handout_1.png">
+          <span>폼레지 핸드아웃</span>
+        </button>
+      </div>
       <p class="velika chat">
         <span class="portrait"></span>
         <span class="content">
@@ -1245,9 +1228,9 @@
         </span>
       </p>
     </section>
-    <section id="three" class="chapter">
+    <section id="three" class="chapter" data-chap-name="물의 산맥">
       <div class="chapter">
-        <h2 class="name">#Chapter 3</h2>
+        <h2>#Chapter 3</h2>
         <ul>
           <li>물의 산맥</li>
           <li>이계 심도 7</li>
@@ -1583,9 +1566,9 @@
         </span>
       </p>
     </section>
-    <section id="four" class="chapter">
+    <section id="four" class="chapter" data-chap-name="세이렌의 섬">
       <div class="chapter">
-        <h2 class="name">#Final Chapter</h2>
+        <h2>#Final Chapter</h2>
         <ul>
           <li>세이렌의 섬</li>
           <li>이계 심도 8</li>
@@ -2202,9 +2185,9 @@
         </span>
       </p>
     </section>
-    <section id="five" class="chapter">
+    <section id="five" class="chapter" data-chap-name="후일담">
       <div class="chapter">
-        <h2 class="name">#후일담</h2>
+        <h2>#후일담</h2>
         <ul>
           <li>변이에 대한 저항.</li>
           <li>
@@ -2499,9 +2482,9 @@
         </p>
       </div>
     </section>
-    <section id="epilouge" class="chapter">
+    <section id="epilouge" class="chapter" data-chap-name="다시 돌아올 겨울이">
       <div class="chapter">
-        <h2 class="name">#에필로그</h2>
+        <h2>#에필로그</h2>
         <ul>
           <li>다시 돌아올 겨울이</li>
           <li>이계심도 4</li>
@@ -3374,7 +3357,12 @@
       </p>
     </section>
   </div>
+  <div class="modal">
+    <img src="" alt="" class="origin-image">
+  </div>
+  <script src="js/MenuAdd.js"></script>
   <script src="js/elsa.js"></script>
+  <script src="js/anna.js"></script>
 </body>
 
 </html>

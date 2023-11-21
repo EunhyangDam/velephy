@@ -25,7 +25,7 @@ body {
   background-attachment: fixed;
   overflow-y: overlay;
 }
-
+/* 스크롤바 */
 body::-webkit-scrollbar {
   width: 15px;
 }
@@ -44,6 +44,7 @@ body::-webkit-scrollbar-button {
   height: 0;
 }
 
+/* 나비 */
 header {
   position: fixed;
   top: 50%;
@@ -99,11 +100,11 @@ header nav a span.nav-text {
   opacity: 0;
   transition: opacity 0.7s, transform 0.3s;
 }
+
 header nav a.active span.nav-text {
   opacity: 1;
   transform: translate(0, -50%) scaleX(100%);
 }
-
 header nav a:hover span.nav-text {
   opacity: 1;
   transform: translate(0, -50%) scaleX(100%);
@@ -129,14 +130,17 @@ section.chapter > * {
   color: var(--primary-color);
   padding-bottom: 1rem;
 }
+
 .session_card {
   max-height: 600px;
   margin-bottom: 0.3rem;
 }
-section .music-container {
+
+/* 음악 */
+.music-container {
   text-align: center;
 }
-section .music-container .music {
+.music-container .music {
   position: relative;
   display: inline-flex;
   flex-direction: row;
@@ -148,14 +152,15 @@ section .music-container .music {
   text-align: justify;
   font-family: "NEXON Lv1 Gothic OTF";
   font-size: 0.8rem;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   transition: color 0.4s;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
 }
-section .music-container .music:hover {
+.music-container .music:hover {
   color: #fff;
 }
 
-section .music-container .music::after {
+.music-container .music::after {
   content: "";
   position: absolute;
   top: 0;
@@ -169,31 +174,68 @@ section .music-container .music::after {
   transform: scaleX(0);
   transition: transform 0.4s;
 }
-
-section .music-container .music:hover::after {
+.music-container .music:hover::after {
   transform: scaleX(1);
 }
 
-section .music-container .music i {
+.music-container .music i {
   font-size: 25px;
   background-color: rgba(255, 255, 255, 0.45);
   padding: 0.5em;
   margin-right: 10px;
   border-radius: 15px;
 }
-section .music-container .music .music-explain {
+
+.music-container .music .music-explain {
   margin: auto 0;
 }
-section .music-container .music .music-explain .music-name {
+.music-container .music .music-explain .music-name {
   font-size: 1.05rem;
   font-weight: 700;
   margin-bottom: 0.2em;
 }
 
+/* 핸드아웃 */
+.handout {
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.handout .handout-preview {
+  max-height: 45vh;
+}
+
+.handout .handout-button {
+  display: block;
+  margin: 1rem auto 0;
+  padding: 1rem 1.5rem;
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 2rem;
+  background: var(--gradient);
+  backdrop-filter: 20px;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1),
+    5px 5px 7px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  color: #fff;
+  font-family: "NEXON Lv1 Gothic OTF";
+}
+
+.handout .handout-button span {
+  display: block;
+  font-size: 0.9rem;
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform 0.5s;
+}
+.handout .handout-button:hover span {
+  transform: scale(1.1);
+}
+/* 채팅 */
 .chat {
   display: flex;
   align-items: flex-start;
 }
+
 .portrait {
   width: 45px;
   height: 45px;
@@ -214,11 +256,12 @@ p.nephy .portrait {
 p.nephy.nephy-winter .portrait {
   background: url(../img/css_sprites.png) -90px 0px;
 }
+
 .name {
   font-weight: bold;
   white-space: nowrap;
   display: block;
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 p.velika .name {
   color: #888;
@@ -226,6 +269,7 @@ p.velika .name {
 p.nephy .name {
   color: #d8d8d3;
 }
+
 .line em {
   font-weight: bold;
   color: var(--primary-color);
@@ -234,10 +278,11 @@ p.nephy .name {
   display: block;
   margin-bottom: 0.5em;
 }
-
 .line > span:last-child {
   margin-bottom: 0;
 }
+
+/* 챕터명 */
 div.chapter {
   position: relative;
   padding: 1.2rem 0px 1.7rem 1.2rem;
@@ -261,11 +306,14 @@ div.chapter h2 {
   font-weight: bold;
   margin-bottom: 0.4rem;
 }
+
 div.chapter ul li:first-child {
   font-weight: bold;
   border-bottom: 1px solid var(--primary-color);
   /* margin-bottom: 2px; */
 }
+
+/* 주사위 및 안내사항 */
 .dice {
   text-align: center;
   color: var(--primary-color);
@@ -281,6 +329,8 @@ div.chapter ul li:first-child {
 .dice.neon span {
   text-shadow: 0 0 10px var(--primary-color);
 }
+
+/* 세션 끊음/재개 시간 */
 .rr-time {
   text-align: center;
   color: var(--primary-color);
@@ -294,6 +344,7 @@ div.chapter ul li:first-child {
   margin-bottom: -0.2rem;
 }
 
+/* 엔딩 */
 .ending {
   text-align: center;
   color: var(--primary-color);
@@ -311,13 +362,13 @@ div.chapter ul li:first-child {
   font-size: 1.2rem;
   font-weight: bold;
 }
+
+/* 크레딧 */
 .credit {
   color: var(--primary-color);
   width: 50%;
   margin: 0 auto;
   text-align: center;
-}
-section.credit {
   margin-top: 2rem;
 }
 
@@ -376,4 +427,38 @@ section.credit {
 
 .credit .time {
   margin-bottom: 0.3rem;
+}
+
+/* 모달 */
+.modal {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s, backdrop-filter 1.5s;
+}
+.modal.active {
+  backdrop-filter: blur(3px);
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal .origin-image {
+  max-width: 95%;
+  max-height: 95vh;
+  opacity: 0;
+  transform: translateY(-20%);
+  transition: transform 0.6s 0.1s, opacity 0.5s 0.1s;
+}
+.modal.active .origin-image {
+  opacity: 1;
+  transform: translateY(0%);
 }
