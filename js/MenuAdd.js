@@ -10,7 +10,7 @@ document.querySelectorAll("section.chapter").forEach((chapter) => {
 
   const newSpanCircle = document.createElement("span");
   newSpanCircle.classList.add("circle");
-
-  document.querySelector("nav").appendChild(newA).appendChild(newSpanText);
-  document.querySelector("nav").appendChild(newA).appendChild(newSpanCircle);
+  newA.appendChild(newSpanText);
+  newA.appendChild(newSpanCircle);
+  document.querySelector("nav").appendChild(newA);
 });

@@ -12,6 +12,13 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -273,7 +280,10 @@ p.velika .name {
 p.nephy .name {
   color: #d8d8d3;
 }
-
+span.line {
+  text-align: justify;
+  line-height: 1.3;
+}
 .line em {
   font-weight: bold;
   color: var(--primary-color);
@@ -371,7 +381,6 @@ div.chapter ul li:first-child {
 /* 크레딧 */
 .credit {
   color: var(--secondary-color);
-  width: 50%;
   margin: 0 auto;
   text-align: center;
   margin-top: 2rem;
@@ -469,39 +478,52 @@ div.chapter ul li:first-child {
 }
 @media (max-width: 1440px) {
   header {
+    visibility: hidden;
     top: 0%;
     right: 0;
-    transform: translate(0%);
-    width: 30vw;
+    transform: translate(0%, 0%);
+    width: 100%;
     height: 100vh;
-    background: var(--secondary-color);
-    box-shadow: -8px 0px 20px rgba(0, 0, 0, 0.25);
-    transition: all 0.3s;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s;
   }
   header.active {
-    top: 0%;
-    right: 0;
-    transform: translate(100%, 0%);
+    visibility: visible;
+    opacity: 1;
   }
   header nav {
+    width: 30vw;
+    height: 100vh;
+    background: var(--primary-color);
+    box-shadow: -8px 0px 20px rgba(0, 0, 0, 0.25);
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0%;
+    right: 0%;
+    transform: translate(100%, 0%);
+    transition: transform 0.6s;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 0rem 3rem;
+  }
+  header.active nav {
+    transform: translate(0%, 0%);
   }
   header nav a {
     position: relative;
     width: auto;
     height: auto;
-    margin: 0px 0px 40px 0px;
+    margin: 0px 0px 2rem 0px;
     border: none;
     text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-family: "NEXON Lv1 Gothic OTF";
     font-weight: 700;
     font-size: 1.5rem;
+    color: #fff;
+    border-radius: 0;
   }
   header nav a span.circle {
     display: none;
@@ -520,11 +542,12 @@ div.chapter ul li:first-child {
     right: 0%;
     z-index: 0;
     transform: none;
-    color: #fff;
     background: none;
     box-shadow: none;
+    color: #fff;
     padding: 0;
     opacity: 1;
+    border-radius: 0px 0 0 0px;
     transition: opacity 0s, transform 0s;
   }
   header nav a span.nav-text::after {
@@ -557,6 +580,8 @@ div.chapter ul li:first-child {
     top: 4%;
     right: 2%;
     z-index: 9999;
+    width: 33px;
+    height: 33px;
   }
   .nav-toggle span {
     display: block;
@@ -571,8 +596,6 @@ div.chapter ul li:first-child {
   }
   .nav-toggle span:first-child {
     top: -10px;
-  }
-  .nav-toggle span:nth-child(2) {
   }
   .nav-toggle span:last-child {
     top: 10px;
@@ -592,5 +615,142 @@ div.chapter ul li:first-child {
   .nav-toggle.active span:last-child {
     top: 0px;
     transform: rotate(-45deg);
+  }
+}
+@media (max-width: 1070px) {
+  header nav {
+    width: 35vw;
+  }
+}
+
+@media (max-width: 950px) {
+  header nav {
+    width: 40vw;
+  }
+
+  .inner {
+    margin: 20px 20px;
+  }
+}
+@media (max-width: 900px) {
+  .credit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 830px) {
+  header nav {
+    width: 45vw;
+  }
+
+  .inner {
+    margin: 20px 20px;
+  }
+}
+
+@media (max-width: 670px) {
+  header nav {
+    width: 50vw;
+  }
+  .handout .handout-button {
+    padding: 0.9rem 1.4rem;
+  }
+}
+
+@media (max-width: 560px) {
+  header nav {
+    width: 60vw;
+  }
+  .handout .handout-button {
+    padding: 0.8rem 1.3rem;
+  }
+}
+
+@media (max-width: 510px) {
+  body {
+    font-family: "Pretendard-Regular";
+  }
+
+  header nav {
+    width: 100vw;
+  }
+
+  .portrait {
+    margin-right: 0.8rem;
+  }
+
+  .name {
+    margin-bottom: 0.15rem;
+  }
+
+  span.line {
+    line-height: 1.4;
+  }
+
+  .credit h4 .rule_name {
+    font-size: 0.7rem;
+    margin-bottom: -0.1rem;
+  }
+  .credit .chara p:first-child {
+    font-size: 0.65rem;
+    margin-bottom: -0.2rem;
+  }
+}
+@media (max-width: 475px) {
+  .inner {
+    max-width: 100%;
+    width: 100%;
+    padding: 1.8rem;
+    margin: 0px;
+    backdrop-filter: blur(20px);
+    border: 1px solid #fff;
+    border-radius: 0px;
+  }
+  button {
+    padding: 0.7rem 1.2rem;
+  }
+  .music-container .music {
+    width: 100%;
+  }
+  .music-container .music .music-explain {
+    width: 80%;
+  }
+  .music-container .music .music-explain .music-name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media (max-width: 370px) {
+  .inner {
+    padding: 1rem;
+  }
+  div.chapter {
+    padding: 0.9rem 0px 1.2rem 1.2rem;
+  }
+}
+@media (max-width: 345px) {
+  .music-container .music .music-explain {
+    width: 75%;
+  }
+}
+@media (max-width: 290px) {
+  html {
+    font-size: 15px;
+  }
+  .inner {
+    padding: 0.8rem;
+  }
+  .music-container .music i {
+    font-size: 20px;
+  }
+  .music-container .music .music-explain {
+    width: 72%;
+  }
+  .portrait {
+    margin-right: 0.7rem;
   }
 }
