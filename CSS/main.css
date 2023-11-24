@@ -26,7 +26,6 @@ html {
 body {
   font-family: "RIDIBatang";
   font-size: 16px;
-  background-image: url(../img/Velephy.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -256,18 +255,36 @@ section.chapter > * {
 }
 
 p.GM .portrait {
+  background: url(../img/css_sprites.png) -180px 0px;
+}
+p.GM.white .portrait {
   background: url(../img/css_sprites.png) -135px 0px;
 }
-p.velika .portrait {
+/* 물거품 엘레지 */
+.foam p.velika .portrait {
   background: url(../img/css_sprites.png) 0px 0px;
 }
-p.nephy .portrait {
+.foam p.nephy .portrait {
   background: url(../img/css_sprites.png) -45px 0px;
 }
-p.nephy.nephy-winter .portrait {
+.foam p.nephy.nephy-winter .portrait {
   background: url(../img/css_sprites.png) -90px 0px;
 }
-
+/* 수몰버스 */
+.bus p.velika .portrait,
+.messiah p.velika .portrait {
+  background: url(../img/css_sprites.png) -270px 0px;
+}
+.bus p.nephy .portrait {
+  background: url(../img/css_sprites.png) -225px 0px;
+}
+/* 정류장의 메시아 */
+.messiah p.nephy .portrait {
+  background: url(../img/css_sprites.png) -315px 0px;
+}
+.messiah p.ending-nephy .portrait {
+  background: url(../img/css_sprites.png) -360px 0px;
+}
 .name {
   font-weight: bold;
   white-space: nowrap;
@@ -275,7 +292,7 @@ p.nephy.nephy-winter .portrait {
   color: var(--secondary-color);
 }
 p.velika .name {
-  color: #888;
+  color: #d3c6e5;
 }
 p.nephy .name {
   color: #d8d8d3;
@@ -318,6 +335,10 @@ div.chapter h2 {
   font-size: 1.5rem;
   position: relative;
   font-weight: bold;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   margin-bottom: 0.4rem;
 }
 
@@ -344,6 +365,17 @@ div.chapter ul li:first-child {
   color: var(--primary-color);
   text-shadow: 0 0 10px var(--primary-color);
 }
+.dice span.name {
+  font-size: 1.2em;
+}
+.dice span.text {
+  text-align: justify;
+  max-width: 600px;
+  margin: 0 auto 0.3rem;
+}
+.dice span.text:last-of-type {
+  margin: 0 auto;
+}
 
 /* 세션 끊음/재개 시간 */
 .rr-time {
@@ -353,6 +385,9 @@ div.chapter ul li:first-child {
 }
 .rr-time li {
   margin-bottom: 0.3rem;
+}
+.rr-time li:last-child {
+  margin-bottom: 0;
 }
 .rr-time .notice {
   font-size: 0.7rem;
